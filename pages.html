@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <div id="epubContainer"></div>
+</div>
+<!--<script src="lord_of_the_flies.epub"></script>-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.5/jszip.min.js"></script>
+<script src="epub.min.js"></script>
+<script>
+  let bookUri = "lord_of_the_flies.epub";
+  let book = ePub(bookUri, {});
+  let rendition = book.renderTo('epubContainer', {
+    flow: 'paginated',
+    manager: 'continuous',
+    spread: 'always',
+    width: "100% - 106px",
+    height: "400px"
+  });
+  // Display the book
+  let displayed = rendition.display(window.location.hash.substr(1) || undefined);
+  displayed.then(function() {
+    console.log('rendition.currentLocation():', rendition.currentLocation());
+  });
+
+  // Generate location and pagination
+  book.ready.then(function() {
+    const stored = localStorage.getItem(book.key() + '-locations');
+    console.log('metadata:', book.package.metadata);
+    if (stored) {
+      return book.locations.load(stored);
+    } else {
+      return book.locations.generate(1024); // Generates CFI for every X characters (Characters per/page)
+    }
+  }).then(function(location) { // This promise will take a little while to return (About 20 seconds or so for Moby Dick)
+    localStorage.setItem(book.key() + '-locations', book.locations.save());
+  });
+
+  // When navigating to the next/previous page
+  rendition.on('relocated', function(locations) {
+    progress = book.locations.percentageFromCfi(locations.start.cfi);
+    console.log('Progress:', progress); // The % of how far along in the book you are
+    console.log('Current Page:', book.locations.locationFromCfi(locations.start.cfi));
+    console.log('Total Pages:', book.locations.total);
+  });
+</script>
+</body>
+</html>

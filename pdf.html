@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <canvas id="theCanvas"></canvas>
+</div>
+<!--<script src="lord_of_the_files.pdf"></script>-->
+<script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.2.228/build/pdf.min.js"></script>
+<script>
+    console.log(this)
+  // var pdfjsLib = require('pdfjs-dist');
+  //
+  // var pdfPath = './lord_of_the_files.pdf';
+  //
+  // // // Setting worker path to worker bundle.
+  // // pdfjsLib.GlobalWorkerOptions.workerSrc =
+  // //   '../../build/browserify/pdf.worker.bundle.js';
+  //
+  // // Loading a document.
+  // var loadingTask = pdfjsLib.getDocument(pdfPath);
+  // loadingTask.promise.then(function (pdfDocument) {
+  //   // Request a first page
+  //   return pdfDocument.getPage(1).then(function (pdfPage) {
+  //     // Display page on the existing canvas with 100% scale.
+  //     var viewport = pdfPage.getViewport({ scale: 1.0, });
+  //     var canvas = document.getElementById('theCanvas');
+  //     canvas.width = viewport.width;
+  //     canvas.height = viewport.height;
+  //     var ctx = canvas.getContext('2d');
+  //     var renderTask = pdfPage.render({
+  //       canvasContext: ctx,
+  //       viewport: viewport,
+  //     });
+  //     return renderTask.promise;
+  //   });
+  // }).catch(function (reason) {
+  //   console.error('Error: ' + reason);
+  // });
+</script>
+</body>
+</html>

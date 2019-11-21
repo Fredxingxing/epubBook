@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">3</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">d9cc7efa-bf97-4987-8292-575845c0aff5</dc:identifier>
+        <dc:title>蝇王</dc:title>
+        <dc:creator opf:file-as="【英】威廉·戈尔丁, ePUBw.COM" opf:role="aut">【英】威廉·戈尔丁, ePUBw.COM</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (3.48.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2016-05-28T16:00:00+00:00</dc:date>
+        <dc:publisher>上海译文出版社</dc:publisher>
+        <dc:identifier opf:scheme="ISBN">9787532766963</dc:identifier>
+        <dc:language>zh</dc:language>
+        <meta content="{&quot;【英】威廉·戈尔丁, ePUBw.COM&quot;: &quot;&quot;}" name="calibre:author_link_map"/>
+        <meta content="2019-11-05T02:23:29+00:00" name="calibre:timestamp"/>
+        <meta content="蝇王" name="calibre:title_sort"/>
+    </metadata>
+    <guide>
+        <reference href="cover.jpg" title="封面" type="cover"/>
+    </guide>
+</package>
